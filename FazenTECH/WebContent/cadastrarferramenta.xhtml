@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/all.min-jsf.css" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+	<title>FazenTECH</title>
+	<style type="text/css">
+.white-button.ui-button.ui-state-default {
+	background-color: #ADADAD;
+	color: #FFF;
+	border-color: #d6d6d6;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-border-color, #d6d6d6);
+}
+
+.white-button.ui-button.ui-state-default:enabled:hover, .white-button.ui-button.ui-state-default:focus
+	{
+	background-color: #f2f2f2;
+	border-color: #ccc;
+	color: #373a3c;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-hover-border-color, #ccc);
+}
+
+.blue-button.ui-button.ui-state-default {
+	background-color: #1E90FF;
+	color: #fff;
+	border-color: #1E90FF;
+}
+
+.blue-button.ui-button.ui-state-default:enabled:hover, .blue-button.ui-button.ui-state-default:focus
+	{
+	background-color: #0E80EF;
+	border-color: #1E90FF;
+}
+
+.green-button.ui-button.ui-state-default {
+	background-color: #69A376;
+	border-color: #69A376; /* velho #5cb85c  novo #69A376*/
+	color: #fff;
+}
+
+.green-button.ui-button.ui-state-default:enabled:hover, .green-button.ui-button.ui-state-default:focus
+	{
+	background-color: #4cae4c;
+	border-color: #69A376;
+	color: #000;
+}
+
+.red-button.ui-button.ui-state-default {
+	background-color: #d9534f;
+	border-color: #d9534f;
+	color: #fff;
+}
+
+.red-button.ui-button.ui-state-default:enabled:hover, .red-button.ui-button.ui-state-default:focus
+	{
+	background-color: #d43f3a;
+	border-color: #d9534f;
+}
+
+.ui-state-default {
+	background-color: #159C58; /*verde*/
+	color: white;
+}
+
+.cor_input {
+	background-color: #F0F0F0; /* cinza claro*/
+	border-color: #F0F0F0;
+	color: black;
+}
+
+.value {
+	font-weight: bold;
+}
+
+.id_par {
+	background-color: rgba(21, 156, 88, 0.3) !important; /*verde*/
+	color: #000000 !important;
+}
+
+.id_impar {
+	background-color: white !important;
+	color: #000000 !important;
+}
+
+h1 {
+	text-align: center;
+	color: #07206E; /*azul*/
+	text-decoration: underline;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 1px 1px 1px black;
+}
+
+.legenda_input {
+	color: black;
+	letter-spacing: 0.2px;
+}
+
+.fixa_rodape {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<p:menubar
+			style="background-color: white !important; border:none!important;">
+			<p:menuitem value="Home" icon="pi pi-home" url="index.xhtml" />
+			<p:submenu label="Cadastrar" icon="pi pi-plus">
+				<p:menuitem value="Animal Doente" url="cadastraranimaldoente.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Equipamento de prot."
+					url="cadastrarequipamentoprotecao.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Fazenda" url="cadastrarfazenda.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Ferramenta" url="cadastrarferramenta.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Funcionário" url="cadastrarfuncionario.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Máquina" url="cadastrarmaquina.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Muda" url="cadastrarmuda.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Ordenha" url="cadastrarordenha.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Plantio" url="cadastrarplantio.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Produto" url="cadastrarproduto.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Solo" url="cadastrarsolo.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Vaca leiteira" url="cadastrarvacaleiteira.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Varejista" url="cadastrarvarejista.xhtml"
+					icon="pi pi-plus" />
+			</p:submenu>
+			<p:submenu label="Relátorios" icon="pi pi-file">
+				<p:menuitem value="Relátorios 1" url="relatorio1.xhtml"
+					icon="pi pi-file" />
+				<p:menuitem value="Relátorios 2" url="relatorio2.xhtml"
+					icon="pi pi-file" />
+			</p:submenu>
+			<p:menuitem value="Produção Leiteira"
+				url="dashboardproducaoleiteira.xhtml" icon="pi pi-chart-bar" />
+		</p:menubar>
+	</h:form>
+	<h:form styleClass="fixa_rodape">
+		<p:menubar
+			style="background-color: rgba(255,255,255,0.1) !important; border:none!important;">
+			<p:menuitem icon="pi pi-home" onclick="window.scroll(0,0)" />
+		</p:menubar>
+	</h:form>
+	<h1>Cadastro de Ferramenta</h1>
+	<h:form id="form_ferramenta">
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="ID" styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{ferramentaBean.ferramenta.id}"
+						disabled="true" styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Nome da ferramenta" styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{ferramentaBean.ferramenta.nome}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Data da aquisição" styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{ferramentaBean.ferramenta.dataAquisicao}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Previsão de duração (durabilidade)"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{ferramentaBean.ferramenta.durabilidadeEstimada}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Valor na compra" styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText type="number"
+						value="#{ferramentaBean.ferramenta.valorCompra}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Ultimo setor a usar"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{ferramentaBean.ferramenta.ultimoSetorUsar}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-12">
+				<p:outputLabel value="Observações a serem registradas"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{ferramentaBean.ferramenta.observacoes}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-refresh" styleClass="white-button"
+					value="Novo" action="#{ferramentaBean.novo}"
+					update="form_ferramenta" />
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-check" styleClass="green-button"
+					value="Salvar" action="#{ferramentaBean.salvar}"
+					update="tabela_ferramentas" />
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-times" styleClass="red-button"
+					value="Remover" action="#{ferramentaBean.delete}" onclick=""
+					update="form_ferramenta tabela_ferramentas" />
+			</div>
+		</div>
+	</h:form>
+	<h1>Lista de ferramentas</h1>
+	<p:dataTable id="tabela_ferramentas"
+		value="#{ferramentaBean.ferramentas}" var="f"
+		rowStyleClass="#{f.id % 2 == 0 ? 'id_par' : 'id_impar'}"
+		tableStyle="width:auto; font-size: 19px; text-align: center; margin: auto;">
+		<p:column>
+			<p:rowToggler />
+		</p:column>
+		<p:column headerText="ID" sortBy="#{f.id}">
+			<p:outputLabel value="#{f.id}" />
+		</p:column>
+		<p:column headerText="Nome" sortBy="#{f.nome}">
+			<p:outputLabel value="#{f.nome}" />
+		</p:column>
+		<p:column headerText="Último setor a usar"
+			sortBy="#{f.ultimoSetorUsar}">
+			<p:outputLabel value="#{f.ultimoSetorUsar}" />
+		</p:column>
+		<p:column headerText="Data da Aquisição" sortBy="#{f.dataAquisicao}">
+			<p:outputLabel value="#{f.dataAquisicao}" />
+		</p:column>
+		<p:column headerText="Durabilidade" sortBy="#{f.durabilidadeEstimada}">
+			<p:outputLabel value="#{f.durabilidadeEstimada}" />
+		</p:column>
+		<p:column headerText="Editar">
+			<p:commandButton styleClass="white-button" value="Editar"
+				actionListener="#{ferramentaBean.setFerramenta(f)}"
+				update="form_ferramenta" />
+		</p:column>
+		<p:column headerText="Excluir">
+			<p:commandButton styleClass="red-button" value="Excluir"
+				actionListener="#{ferramentaBean.remover(f)}"
+				update="form_ferramenta tabela_ferramentas" />
+		</p:column>
+		<p:rowExpansion>
+			<p:panelGrid columns="2" columnClasses="label,value"
+				style="text-align: center; margin: auto; width:auto;">
+				<f:facet name="header">
+					<p:outputLabel value="#{f.nome}" />
+				</f:facet>
+				<h:outputText value="Id:" />
+				<h:outputText value="#{f.id}" />
+				<h:outputText value="Último setor a usar:" />
+				<h:outputText value="#{f.ultimoSetorUsar}" />
+				<h:outputText value="Data de Aquisição" />
+				<h:outputText value="#{f.dataAquisicao}" />
+				<h:outputText value="Valor na compra:" />
+				<h:outputText value="R$ #{f.valorCompra}" />
+				<h:outputText value="Durabilidade Estimada:" />
+				<h:outputText value="#{f.durabilidadeEstimada}" />
+				<h:outputText value="Observações:" />
+				<h:outputText value="#{f.observacoes}" />
+				<h:outputText value="Funcionário responsavel:" />
+				<h:outputText value="#{f.funcionarioResponsavel.nome}" />
+			</p:panelGrid>
+		</p:rowExpansion>
+	</p:dataTable>
+</h:body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/all.min-jsf.css" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+	<title>FazenTECH</title>
+	<style type="text/css">
+.white-button.ui-button.ui-state-default {
+	background-color: #ADADAD;
+	color: #FFF;
+	border-color: #d6d6d6;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-border-color, #d6d6d6);
+}
+
+.white-button.ui-button.ui-state-default:enabled:hover, .white-button.ui-button.ui-state-default:focus
+	{
+	background-color: #f2f2f2;
+	border-color: #ccc;
+	color: #373a3c;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-hover-border-color, #ccc);
+}
+
+.blue-button.ui-button.ui-state-default {
+	background-color: #1E90FF;
+	color: #fff;
+	border-color: #1E90FF;
+}
+
+.blue-button.ui-button.ui-state-default:enabled:hover, .blue-button.ui-button.ui-state-default:focus
+	{
+	background-color: #0E80EF;
+	border-color: #1E90FF;
+}
+
+.green-button.ui-button.ui-state-default {
+	background-color: #69A376;
+	border-color: #69A376; /* velho #5cb85c  novo #69A376*/
+	color: #fff;
+}
+
+.green-button.ui-button.ui-state-default:enabled:hover, .green-button.ui-button.ui-state-default:focus
+	{
+	background-color: #4cae4c;
+	border-color: #69A376;
+	color: #000;
+}
+
+.red-button.ui-button.ui-state-default {
+	background-color: #d9534f;
+	border-color: #d9534f;
+	color: #fff;
+}
+
+.red-button.ui-button.ui-state-default:enabled:hover, .red-button.ui-button.ui-state-default:focus
+	{
+	background-color: #d43f3a;
+	border-color: #d9534f;
+}
+
+.ui-state-default {
+	background-color: #159C58; /*verde*/
+	color: white;
+}
+
+.cor_input {
+	background-color: #F0F0F0; /* cinza claro*/
+	border-color: #F0F0F0;
+	color: black;
+}
+
+.value {
+	font-weight: bold;
+}
+
+.id_par {
+	background-color: rgba(21, 156, 88, 0.3) !important; /*verde*/
+	color: #000000 !important;
+}
+
+.id_impar {
+	background-color: white !important;
+	color: #000000 !important;
+}
+
+h1 {
+	text-align: center;
+	color: #07206E; /*azul*/
+	letter-spacing: 1.5px;
+	text-shadow: 1px 1px 1px black;
+}
+
+.legenda_input {
+	color: black;
+	letter-spacing: 0.2px;
+}
+
+.fixa_rodape {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<p:menubar
+			style="background-color: white !important; border:none!important;">
+			<p:menuitem value="Home" icon="pi pi-home" url="index.xhtml" />
+			<p:submenu label="Cadastrar" icon="pi pi-plus">
+				<p:menuitem value="Animal Doente" url="cadastraranimaldoente.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Equipamento de prot."
+					url="cadastrarequipamentoprotecao.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Fazenda" url="cadastrarfazenda.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Ferramenta" url="cadastrarferramenta.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Funcionário" url="cadastrarfuncionario.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Máquina" url="cadastrarmaquina.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Muda" url="cadastrarmuda.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Ordenha" url="cadastrarordenha.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Plantio" url="cadastrarplantio.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Produto" url="cadastrarproduto.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Solo" url="cadastrarsolo.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Vaca leiteira" url="cadastrarvacaleiteira.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Varejista" url="cadastrarvarejista.xhtml"
+					icon="pi pi-plus" />
+			</p:submenu>
+			<p:submenu label="Relátorios" icon="pi pi-file">
+				<p:menuitem value="Relátorios 1" url="relatorio1.xhtml"
+					icon="pi pi-file" />
+				<p:menuitem value="Relátorios 2" url="relatorio2.xhtml"
+					icon="pi pi-file" />
+			</p:submenu>
+			<p:menuitem value="Produção Leiteira"
+				url="dashboardproducaoleiteira.xhtml" icon="pi pi-chart-bar" />
+		</p:menubar>
+	</h:form>
+	<h:form styleClass="fixa_rodape">
+		<p:menubar
+			style="background-color: rgba(255,255,255,0.1) !important; border:none!important;">
+			<p:menuitem icon="pi pi-home" onclick="window.scroll(0,0)" />
+		</p:menubar>
+	</h:form>
+	<h1>Animais que estão ou ficaram doentes, consultando informações do tratamento usado,
+	espécie do animal, início e fim do tratamento, além do responsável pelo tratamento.</h1>
+	<h:form>
+		<p:dataTable id="tableId" value="#{animalDoenteBean.animalDoentes}"
+			var="a" rowStyleClass="#{a.id % 2 == 0 ? 'id_par' : 'id_impar'}"
+			tableStyle="width:auto; font-size: 19px; text-align: center; margin: auto;">
+			<p:column headerText="ID" sortBy="#{a.id}">
+				<p:outputLabel value="#{a.id}" />
+			</p:column>
+			<p:column headerText="Nome" sortBy="#{a.identificacaoNominal}">
+				<p:outputLabel value="#{a.identificacaoNominal}" />
+			</p:column>
+			<p:column headerText="Data de Nascimento"
+				sortBy="#{a.dataNascimento}">
+				<p:outputLabel value="#{a.dataNascimento}" />
+			</p:column>
+			<p:column headerText="Animal" sortBy="#{a.especie}">
+				<p:outputLabel value="#{a.especie}" />
+			</p:column>
+			<p:column headerText="Detalhes do tratamento usado"
+				sortBy="#{a.tratamentoUsado}">
+				<p:outputLabel value="#{a.tratamentoUsado}" />
+			</p:column>
+			<p:column headerText="Quando iniciou o tratamento"
+				sortBy="#{a.diaInicioTratamento}">
+				<p:outputLabel value="#{a.diaInicioTratamento}" />
+			</p:column>
+			<p:column headerText="Quando terminou o tratamento"
+				sortBy="#{a.diaFinalDoTratamento}">
+				<p:outputLabel value="#{a.diaFinalDoTratamento}" />
+			</p:column>
+			<p:column headerText="Funcionário:"
+				sortBy="#{a.funcionario.nome}">
+				<p:outputLabel value="#{a.funcionario.nome}" />
+			</p:column>
+		</p:dataTable>
+		<p:commandButton value="Export as CSV" ajax="false">
+			<p:dataExporter type="csv" target="tableId" fileName="animaisDoentesTratamentos" />
+		</p:commandButton>
+	</h:form>
+</h:body>
+</html>

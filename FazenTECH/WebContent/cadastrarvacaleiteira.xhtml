@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/all.min-jsf.css" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+	<title>FazenTECH</title>
+	<style type="text/css">
+.white-button.ui-button.ui-state-default {
+	background-color: #ADADAD;
+	color: #FFF;
+	border-color: #d6d6d6;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-border-color, #d6d6d6);
+}
+
+.white-button.ui-button.ui-state-default:enabled:hover, .white-button.ui-button.ui-state-default:focus
+	{
+	background-color: #f2f2f2;
+	border-color: #ccc;
+	color: #373a3c;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-color: var(- -input-hover-border-color, #ccc);
+}
+
+.blue-button.ui-button.ui-state-default {
+	background-color: #1E90FF;
+	color: #fff;
+	border-color: #1E90FF;
+}
+
+.blue-button.ui-button.ui-state-default:enabled:hover, .blue-button.ui-button.ui-state-default:focus
+	{
+	background-color: #0E80EF;
+	border-color: #1E90FF;
+}
+
+.green-button.ui-button.ui-state-default {
+	background-color: #69A376;
+	border-color: #69A376; /* velho #5cb85c  novo #69A376*/
+	color: #fff;
+}
+
+.green-button.ui-button.ui-state-default:enabled:hover, .green-button.ui-button.ui-state-default:focus
+	{
+	background-color: #4cae4c;
+	border-color: #69A376;
+	color: #000;
+}
+
+.red-button.ui-button.ui-state-default {
+	background-color: #d9534f;
+	border-color: #d9534f;
+	color: #fff;
+}
+
+.red-button.ui-button.ui-state-default:enabled:hover, .red-button.ui-button.ui-state-default:focus
+	{
+	background-color: #d43f3a;
+	border-color: #d9534f;
+}
+
+.ui-state-default {
+	background-color: #159C58; /*verde*/
+	color: white;
+}
+
+.cor_input {
+	background-color: #F0F0F0; /* cinza claro*/
+	border-color: #F0F0F0;
+	color: black;
+}
+
+.value {
+	font-weight: bold;
+}
+
+.id_par {
+	background-color: rgba(21, 156, 88, 0.3) !important; /*verde*/
+	color: #000000 !important;
+}
+
+.id_impar {
+	background-color: white !important;
+	color: #000000 !important;
+}
+
+h1 {
+	text-align: center;
+	color: #07206E; /*azul*/
+	text-decoration: underline;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 1px 1px 1px black;
+}
+
+.legenda_input {
+	color: black;
+	letter-spacing: 0.2px;
+}
+
+.fixa_rodape {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<p:menubar
+			style="background-color: white !important; border:none!important;">
+			<p:menuitem value="Home" icon="pi pi-home" url="index.xhtml" />
+			<p:submenu label="Cadastrar" icon="pi pi-plus">
+				<p:menuitem value="Animal Doente" url="cadastraranimaldoente.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Equipamento de prot."
+					url="cadastrarequipamentoprotecao.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Fazenda" url="cadastrarfazenda.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Ferramenta" url="cadastrarferramenta.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Funcionário" url="cadastrarfuncionario.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Máquina" url="cadastrarmaquina.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Muda" url="cadastrarmuda.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Ordenha" url="cadastrarordenha.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Plantio" url="cadastrarplantio.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Produto" url="cadastrarproduto.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Solo" url="cadastrarsolo.xhtml" icon="pi pi-plus" />
+				<p:menuitem value="Vaca leiteira" url="cadastrarvacaleiteira.xhtml"
+					icon="pi pi-plus" />
+				<p:menuitem value="Varejista" url="cadastrarvarejista.xhtml"
+					icon="pi pi-plus" />
+			</p:submenu>
+			<p:submenu label="Relátorios" icon="pi pi-file">
+				<p:menuitem value="Relátorios 1" url="relatorio1.xhtml"
+					icon="pi pi-file" />
+				<p:menuitem value="Relátorios 2" url="relatorio2.xhtml"
+					icon="pi pi-file" />
+			</p:submenu>
+			<p:menuitem value="Produção Leiteira"
+				url="dashboardproducaoleiteira.xhtml" icon="pi pi-chart-bar" />
+		</p:menubar>
+	</h:form>
+	<h:form styleClass="fixa_rodape">
+		<p:menubar
+			style="background-color: rgba(255,255,255,0.1) !important; border:none!important;">
+			<p:menuitem icon="pi pi-home" onclick="window.scroll(0,0)" />
+		</p:menubar>
+	</h:form>
+	<h1>Cadastro de Vacas Leiteiras</h1>
+	<h:form id="form_vacas_leiteiras">
+		<div class="ui-g ui-fluid">
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="ID" styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{vacaLeiteiraBean.vaca.id}"
+						disabled="true" styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Nome da Vaca"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.identificacaoNominal}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Data de nascimento da vaca"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.dataNascimento}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Origem da vaca"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText value="#{vacaLeiteiraBean.vaca.origem}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Produção total em Litros de leite"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.producaoTotal}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Raça da vaca"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.raca}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Data da última ordenha"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.dataUltimaOrdenha}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Temperatura do leite"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.temperaturaDoLeite}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Está inseminada?"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+						<p:selectBooleanButton
+						value="#{vacaLeiteiraBean.vaca.estaInseminada}" onLabel="Sim"
+						offLabel="Não" style="width:100%;" styleClass="cor_input"/>
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Estimativa de parto"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.estimativaDeParto}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Secagem Esperada"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.secagemEsperada}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Tempo de Ruminação por dia"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.tempoDeRuminacaoDia}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<p:outputLabel value="Número de partos"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.numeroDePartos}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-8">
+				<p:outputLabel value="Descrição Da Saúde da vaca"
+					styleClass="legenda_input" />
+				<div class="ui-inputgroup">
+					<p:inputText
+						value="#{vacaLeiteiraBean.vaca.descricaoDeSaudeAnimal}"
+						styleClass="cor_input" />
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-refresh" styleClass="white-button"
+					value="Novo" action="#{vacaLeiteiraBean.novo}"
+					update="form_vacas_leiteiras" />
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-check" styleClass="green-button"
+					value="Salvar" action="#{vacaLeiteiraBean.salvar}" update="tabela_de_vacas_leiteiras" />
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<br />
+				<p:commandButton icon="pi pi-times" styleClass="red-button"
+					value="Remover" action="#{vacaLeiteiraBean.delete}" onclick=""
+					update="form_vacas_leiteiras tabela_de_vacas_leiteiras" />
+			</div>
+		</div>
+	</h:form>
+	<h1>Lista de Vacas leiteiras</h1>
+	<p:dataTable id="tabela_de_vacas_leiteiras"
+		value="#{vacaLeiteiraBean.vacas}" var="v"
+		rowStyleClass="#{v.id % 2 == 0 ? 'id_par' : 'id_impar'}"
+		tableStyle="width:auto; font-size: 19px; text-align: center; margin: auto;">
+		<p:column>
+			<p:rowToggler />
+		</p:column>
+		<p:column headerText="ID" sortBy="#{v.id}">
+			<p:outputLabel value="#{v.id}" />
+		</p:column>
+		<p:column headerText="Nome" sortBy="#{v.identificacaoNominal}">
+			<p:outputLabel value="#{v.identificacaoNominal}" />
+		</p:column>
+		<p:column headerText="Raça" sortBy="#{v.raca}">
+			<p:outputLabel value="#{v.raca}" />
+		</p:column>
+		<p:column headerText="Número De Partos" sortBy="#{v.numeroDePartos}">
+			<p:outputLabel value="#{v.numeroDePartos}" />
+		</p:column>
+		<p:column headerText="Produção Total" sortBy="#{v.producaoTotal}">
+			<p:outputLabel value="#{v.producaoTotal}" />
+		</p:column>
+		<p:column headerText="Editar">
+			<p:commandButton styleClass="white-button" value="Editar"
+				actionListener="#{vacaLeiteiraBean.setVaca(v)}"
+				update="form_vacas_leiteiras" />
+		</p:column>
+		<p:column headerText="Excluir">
+			<p:commandButton styleClass="red-button" value="Excluir"
+				actionListener="#{vacaLeiteiraBean.remover(v)}"
+				update="form_vacas_leiteiras tabela_de_vacas_leiteiras" />
+		</p:column>
+		<p:rowExpansion>
+			<p:panelGrid columns="2" columnClasses="label,value"
+				style="text-align: center; margin: auto; width:auto;">
+				<f:facet name="header">
+					<p:outputLabel value="#{v.identificacaoNominal}" />
+				</f:facet>
+				<h:outputText value="Id:" />
+				<h:outputText value="#{v.id}" />
+				<h:outputText value="Data de Nascimento:" />
+				<h:outputText value="#{v.dataNascimento}" />
+				<h:outputText value="Origem:" />
+				<h:outputText value="#{v.origem}" />
+				<h:outputText value="Produção total em Litros:" />
+				<h:outputText value="#{v.producaoTotal}" />
+				<h:outputText value="Raça da vaca:" />
+				<h:outputText value="#{v.raca}" />
+				<h:outputText value="Data da última ordenha:" />
+				<h:outputText value="#{v.dataUltimaOrdenha}" />
+				<h:outputText value="Temperatura do leite:" />
+				<h:outputText value="#{v.temperaturaDoLeite}" />
+				<h:outputText value="Está inseminada?:" />
+				<h:outputText value="#{v.estaInseminada}" />
+				<h:outputText value="Estimativa de parto:" />
+				<h:outputText value="#{v.estimativaDeParto}" />
+				<h:outputText value="Secagem Esperada:" />
+				<h:outputText value="#{v.secagemEsperada}" />
+				<h:outputText value="Tempo de Ruminação por dia:" />
+				<h:outputText value="#{v.tempoDeRuminacaoDia}" />
+				<h:outputText value="Número de partos:" />
+				<h:outputText value="#{v.numeroDePartos}" />
+				<h:outputText value="Descrição Da Saude da vaca:" />
+				<h:outputText value="#{v.descricaoDeSaudeAnimal}" />
+			</p:panelGrid>
+		</p:rowExpansion>
+	</p:dataTable>
+</h:body>
+</html>
